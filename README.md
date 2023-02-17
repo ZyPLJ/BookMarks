@@ -127,7 +127,7 @@ https://www.cnblogs.com/ZYPLJ/p/17103691.html
 
 ## 项目使用介绍
 
-怎么使用呢，非常简单，只需要找到你使用的浏览器的`Boolmarks`文件目录即可，不要引号。
+怎么使用呢，非常简单，只需要找到你使用的浏览器的`Boolmarks`文件目录即可，然后上传文件。
 
 ```
 //这是我的Google浏览器目录
@@ -136,8 +136,6 @@ C:\Users\Lenovo\AppData\Local\Google\Chrome\User Data\Default\Bookmarks
 
 ![](https://gitee.com/zyplj/book-marks/raw/master/images/文件路径.png)
 
-![](https://gitee.com/zyplj/book-marks/raw/master/images/初始化书签操作.png)
-
 # 遇到问题
 
-![](https://gitee.com/zyplj/book-marks/raw/master/images/5192045913af4a31a7988ed7077a1e0.jpg)
+![](https://gitee.com/zyplj/book-marks/raw/master/images/微信图片.jpg)
