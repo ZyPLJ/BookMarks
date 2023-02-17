@@ -1,0 +1,15 @@
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Services\obj\Debug\net6.0\BrowerBookmariks.Services.csproj.AssemblyReference.cache
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Services\obj\Debug\net6.0\BrowerBookmariks.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Services\obj\Debug\net6.0\BrowerBookmariks.Services.AssemblyInfoInputs.cache
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Services\obj\Debug\net6.0\BrowerBookmariks.Services.AssemblyInfo.cs
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Services\obj\Debug\net6.0\BrowerBookmariks.Services.csproj.CoreCompileInputs.cache
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Services\bin\Debug\net6.0\BrowerBookmariks.Services.deps.json
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Services\bin\Debug\net6.0\BrowerBookmariks.Services.dll
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Services\bin\Debug\net6.0\BrowerBookmariks.Services.pdb
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Services\bin\Debug\net6.0\BrowerBookmariks.Model.dll
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Services\bin\Debug\net6.0\BrowerBookmariks.Model.pdb
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Services\obj\Debug\net6.0\BrowerBookmariks.Services.csproj.CopyComplete
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Services\obj\Debug\net6.0\BrowerBookmariks.Services.dll
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Services\obj\Debug\net6.0\refint\BrowerBookmariks.Services.dll
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Services\obj\Debug\net6.0\BrowerBookmariks.Services.pdb
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Services\obj\Debug\net6.0\ref\BrowerBookmariks.Services.dll
