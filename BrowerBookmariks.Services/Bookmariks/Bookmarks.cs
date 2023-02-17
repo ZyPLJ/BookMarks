@@ -1,5 +1,6 @@
 ﻿using BrowerBookmariks.Model.Entitys;
 using BrowerBookmariks.Model.ViewModel;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -21,7 +22,7 @@ namespace BrowerBookmariks.Model.Services
         {
             _context = context;
         }
-        public List<Bookmark> bookmarks(string path)
+        public ApiResponse bookmarks(IFormFile file)
         {
             _context.bookmarks.RemoveRange(_context.bookmarks.ToList());
             List<Bookmark> list = new List<Bookmark>();
@@ -32,7 +33,7 @@ namespace BrowerBookmariks.Model.Services
             }
 			try
 			{
-				using (StreamReader sr = new StreamReader(path))
+				using (StreamReader sr = new StreamReader(file.OpenReadStream()))
 				{
 					using (JsonTextReader render = new JsonTextReader(sr))
 					{
@@ -52,8 +53,9 @@ namespace BrowerBookmariks.Model.Services
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex.Message);
+                return new ApiResponse{ StatusCode=500,Message=ex.Message,Successful=false };
 			}
-			return list;
+			return new ApiResponse { Message = "初始化书签成功！" };
         }
 		public void ForE(JToken jToken,List<Bookmark> list)
 		{

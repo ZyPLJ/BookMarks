@@ -18,7 +18,7 @@ var mvcBuilder = builder.Services.AddControllersWithViews(
 builder.Services.AddDbContext<MyDbContext>(opt =>
 {
     //string connStr = builder.Configuration.GetSection("ConnStr").Value;
-    string connStr = "";
+    string connStr = "Server=101.43.25.210;Port=3306;Database=BookMark; User=root;Password=123456;";
     opt.UseMySql(connStr, new MySqlServerVersion(new Version(5, 7, 40)));
 });
 builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
@@ -32,7 +32,10 @@ builder.WebHost.UseUrls("http://*:9031");
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy", 
-        opt => opt.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().WithExposedHeaders("http://localhost:8080/"));
+        opt => opt.AllowAnyOrigin()
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .WithExposedHeaders("http://localhost:9030/"));
 });
 //·þÎñ²ã×¢Èë
 builder.Services.AddTransient<IBookmarks, Bookmarks>();

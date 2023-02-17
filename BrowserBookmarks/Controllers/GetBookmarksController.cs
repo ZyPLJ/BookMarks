@@ -19,9 +19,9 @@ namespace BrowserBookmarks.Controllers
             _bookmarks = bookmarks;
         }
         [HttpPost]
-        public ApiResponse<List<Bookmark>> BookMarks([FromBody]string path)
+        public ApiResponse BookMarks(IFormFile file)
         {
-            return new ApiResponse<List<Bookmark>> { Data = _bookmarks.bookmarks(path) };
+            return _bookmarks.bookmarks(file);
         }
         [HttpGet]
         public ApiResponsePaged<NewBookmark> GetPageList([FromQuery]QueryParameters param)

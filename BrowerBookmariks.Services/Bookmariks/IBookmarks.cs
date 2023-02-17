@@ -1,5 +1,6 @@
 ﻿using BrowerBookmariks.Model.Entitys;
 using BrowerBookmariks.Model.ViewModel;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace BrowerBookmariks.Model.Services
         /// </summary>
         /// <param name="path">Bookmarks文件路径</param>
         /// <returns></returns>
-        List<Bookmark> bookmarks(string path);
+        ApiResponse bookmarks(IFormFile file);
         List<NewBookmark> GetAll();
         /// <summary>
         /// 分页查询
