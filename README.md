@@ -109,7 +109,7 @@ Server=localhost;Port=3306;Database=BookMark; User=root;Password=123456;
 如果没有Visual Studio 2022如何打包呢，可以使用命名行，进入项目BrowserBookmarks目录（bin文件的那一层），输入dotnet publish即可
 然后在BrowserBookmarks\bin\Debug\net6.0\publish 中可以看到打包的项目，打包后目录如图所示：
 
-![](https://gitee.com/zyplj/book-marks/raw/master/images/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE.png)
+![](https://gitee.com/zyplj/book-marks/raw/master/images/打包.png)
 
 如果没有Dockerfile文件，可以使用本项目中的参考的文件copy进去
 
@@ -137,7 +137,7 @@ Server=localhost;Port=3306;Database=BookMark; User=root;Password=123456;
 
 然后修改初始化书签组件中上传文件的url路径
 
-![](https://gitee.com/zyplj/book-marks/raw/master/images/文件上传.png)
+![](https://gitee.com/zyplj/book-marks/raw/master/images/文件.png)
 
 可以去看一下我的博客园文章，步骤一样。
 
