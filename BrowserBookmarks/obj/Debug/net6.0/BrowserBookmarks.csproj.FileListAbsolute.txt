@@ -52,3 +52,8 @@ D:\.net6\BrowserBookmarks\BrowserBookmarks\bin\Debug\net6.0\JetBrains.Annotation
 D:\.net6\BrowserBookmarks\BrowserBookmarks\bin\Debug\net6.0\X.PagedList.dll
 D:\.net6\BrowserBookmarks\BrowserBookmarks\obj\Debug\net6.0\BrowserBookmarks.MvcApplicationPartsAssemblyInfo.cs
 D:\.net6\BrowserBookmarks\BrowserBookmarks\bin\Debug\net6.0\Dockerfile
+D:\.net6\BrowserBookmarks\BrowserBookmarks\obj\Debug\net6.0\staticwebassets\msbuild.BrowserBookmarks.Microsoft.AspNetCore.StaticWebAssets.props
+D:\.net6\BrowserBookmarks\BrowserBookmarks\obj\Debug\net6.0\staticwebassets\msbuild.build.BrowserBookmarks.props
+D:\.net6\BrowserBookmarks\BrowserBookmarks\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.BrowserBookmarks.props
+D:\.net6\BrowserBookmarks\BrowserBookmarks\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.BrowserBookmarks.props
+D:\.net6\BrowserBookmarks\BrowserBookmarks\obj\Debug\net6.0\staticwebassets.pack.json

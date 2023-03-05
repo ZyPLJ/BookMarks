@@ -31,34 +31,34 @@ namespace BrowerBookmariks.Model.Services
                 _context.classifications.Add(new Classification { Name = "书签栏" });
                 _context.SaveChanges();
             }
-			try
-			{
-				using (StreamReader sr = new StreamReader(file.OpenReadStream()))
-				{
-					using (JsonTextReader render = new JsonTextReader(sr))
-					{
-						JObject o = (JObject)JToken.ReadFrom(render);
-						//这是书签栏
-						var bookmark_bar = o["roots"]["bookmark_bar"];
-						//这是其他书签
-						var other = o["roots"]["other"];
-                        ForE(bookmark_bar,list);
-                        ForE(other,list);
+            try
+            {
+                using (StreamReader sr = new StreamReader(file.OpenReadStream()))
+                {
+                    using (JsonTextReader render = new JsonTextReader(sr))
+                    {
+                        JObject o = (JObject)JToken.ReadFrom(render);
+                        //这是书签栏
+                        var bookmark_bar = o["roots"]["bookmark_bar"];
+                        //这是其他书签
+                        var other = o["roots"]["other"];
+                        ForE(bookmark_bar, list);
+                        ForE(other, list);
                         _context.bookmarks.AddRange(list);
                         _context.SaveChanges();
                     }
-				}
-				Console.WriteLine("");
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine(ex.Message);
-                return new ApiResponse{ StatusCode=500,Message=ex.Message,Successful=false };
-			}
-			return new ApiResponse { Message = "初始化书签成功！" };
+                }
+                Console.WriteLine("");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return new ApiResponse { StatusCode = 500, Message = ex.Message, Successful = false };
+            }
+            return new ApiResponse { Message = "初始化书签成功！" };
         }
-		public void ForE(JToken jToken,List<Bookmark> list)
-		{
+        public void ForE(JToken jToken, List<Bookmark> list)
+        {
             int cid = _context.classifications.FirstOrDefault(c => c.Name == "书签栏").Id;
             foreach (var item in jToken["children"])
             {
@@ -70,7 +70,8 @@ namespace BrowerBookmariks.Model.Services
                         Name = item["name"].ToString()
                     };
                     var cName = _context.classifications.FirstOrDefault(c => c.Name == item["name"].ToString());
-                    if (cName == null) {
+                    if (cName == null)
+                    {
                         _context.classifications.Add(c);
                         _context.SaveChanges();
                     }
@@ -107,7 +108,7 @@ namespace BrowerBookmariks.Model.Services
 
         public List<NewBookmark> GetAll()
         {
-            var b = _context.bookmarks.Join(_context.classifications, a => a.classificationid, g => g.Id, (a, g) => new NewBookmark(a.Name, a.Url, a.Children, a.Guid, a.Id, g.Name,false)).ToList();
+            var b = _context.bookmarks.Join(_context.classifications, a => a.classificationid, g => g.Id, (a, g) => new NewBookmark(a.Name, a.Url, a.Children, a.Guid, a.Id, g.Name, false)).ToList();
             return b;
         }
 
@@ -116,16 +117,33 @@ namespace BrowerBookmariks.Model.Services
             IQueryable<NewBookmark> data;
             if (!string.IsNullOrEmpty(query.Search))
             {
+                // data = _context.bookmarks
+                //.Where(a => a.Name.Contains(query.Search))
+                //.Join(_context.classifications, a => a.classificationid, g => g.Id, (a, g) => new NewBookmark(a.Name, a.Url, a.Children, a.Guid, a.Id, g.Name,false));
                 data = _context.bookmarks
-               .Where(a => a.Name.Contains(query.Search))
-               .Join(_context.classifications, a => a.classificationid, g => g.Id, (a, g) => new NewBookmark(a.Name, a.Url, a.Children, a.Guid, a.Id, g.Name,false));
+                .Where(a => a.Name.Contains(query.Search))
+                .OrderByDescending(o => o.Id)
+                .Select(a => new NewBookmark(a.Name, a.Url, a.Children, a.Guid, a.Id, a.classification.Name, false));
+            }
+            else if (query.Classid != 0 && query.Classid !=null)
+            {
+                //  data = _context.bookmarks
+                //.Where(a => a.classificationid == query.Classid)
+                //.Join(_context.classifications, a => a.classificationid, g => g.Id, (a, g) => new NewBookmark(a.Name, a.Url, a.Children, a.Guid, a.Id, g.Name, false));
+                data = _context.bookmarks
+                .Where(a => a.classificationid == query.Classid)
+                .OrderByDescending(o => o.Id)
+                .Select(a => new NewBookmark(a.Name, a.Url, a.Children, a.Guid, a.Id, a.classification.Name, false));
             }
             else
             {
                 data = _context.bookmarks
-              .Join(_context.classifications, a => a.classificationid, g => g.Id, (a, g) => new NewBookmark(a.Name, a.Url, a.Children, a.Guid, a.Id, g.Name,false));
-            }   
-            return data.ToPagedList(query.Page,query.PageSize);
+                .OrderByDescending(o => o.Id)
+                .Select(a => new NewBookmark(a.Name, a.Url, a.Children, a.Guid, a.Id, a.classification.Name, false));
+                //  data = _context.bookmarks
+                //.Join(_context.classifications, a => a.classificationid, g => g.Id, (a, g) => new NewBookmark(a.Name, a.Url, a.Children, a.Guid, a.Id, g.Name,false));
+            }
+            return data.ToPagedList(query.Page, query.PageSize);
 
         }
     }

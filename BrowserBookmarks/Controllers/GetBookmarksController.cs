@@ -23,6 +23,7 @@ namespace BrowserBookmarks.Controllers
         {
             return _bookmarks.bookmarks(file);
         }
+        [ResponseCache(Duration = 30)]
         [HttpGet]
         public ApiResponsePaged<NewBookmark> GetPageList([FromQuery]QueryParameters param)
         {

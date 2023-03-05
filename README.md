@@ -4,6 +4,8 @@
 
 作为一个bug程序员，保存了很多书签，直接用浏览器的每次都还要找，很麻烦，比如我自己的Google浏览器就200多个书签。所以做了个简单的项目去管理他们，同样该项目可以作为vue3、.net6 webApi入门项目，很容易上手。
 
+部署项目需要用到.net6 SDK,百度去官网下载即可。
+
 ## 使用到的技术
 
 
@@ -14,9 +16,22 @@
 
 
 ## 前端地址
+
 [书签前端地址](https://gitee.com/zyplj/book-marks-vue/tree/master)
 
+## 接口文档
+
+ **如何用控制台运行项目** :[点击跳转](https://www.cnblogs.com/ZYPLJ/p/17138996.html)
+
+.net6 webapi自带Swagger接口文档，运行项目后，根据运行的url地址和端口号可以访问Swagger，项目运行文章查看如图所示：
+![](https://gitee.com/zyplj/book-marks/raw/master/images/接口文档.png)
+
 ## 项目截图
+
+新增原神首页
+可以跳转最近很火的AI chatgpt
+
+![](https://gitee.com/zyplj/book-marks/raw/master/images/原神首页.png)
 
 初始化书签界面
 
@@ -84,15 +99,19 @@ Server=数据库地址;Port=端口;Database=BookMark; User=root;Password=123456;
 Server=localhost;Port=3306;Database=BookMark; User=root;Password=123456;
 ```
 
-Server=101.43.25.210;Port=3306;Database=BookMark; User=root;Password=123456;
 
 ![](https://gitee.com/zyplj/book-marks/raw/master/images/数据库字符串.png)
 
-**开始部署**
+### 开始部署
 
 打包项目，Visual Studio 2022去官网下免费的，然后步骤在博客项目中可以看到。
 
-其他方式也行，自行百度。
+如果没有Visual Studio 2022如何打包呢，可以使用命名行，进入项目BrowserBookmarks目录（bin文件的那一层），输入dotnet publish即可
+然后在BrowserBookmarks\bin\Debug\net6.0\publish 中可以看到打包的项目，打包后目录如图所示：
+
+![](https://gitee.com/zyplj/book-marks/raw/master/images/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE.png)
+
+如果没有Dockerfile文件，可以使用本项目中的参考的文件copy进去
 
 进入书签项目部署的目录，打开控制台，输入`docker build -t 名称 .`，如图：可以和我一样的名称
 
@@ -116,11 +135,16 @@ Server=101.43.25.210;Port=3306;Database=BookMark; User=root;Password=123456;
 
 ![](https://gitee.com/zyplj/book-marks/raw/master/images/vue1.png)
 
+然后修改初始化书签组件中上传文件的url路径
+
+![](https://gitee.com/zyplj/book-marks/raw/master/images/文件上传.png)
+
 可以去看一下我的博客园文章，步骤一样。
 
 https://www.cnblogs.com/ZYPLJ/p/17103691.html
 
 ## 跨域问题
+
 需要修改Program.cs中文件代码，根据自己去修改，如果是本地则只需要关注端口号，如图所示：
 
 ![](https://gitee.com/zyplj/book-marks/raw/master/images/跨域问题.png)
@@ -135,6 +159,14 @@ C:\Users\Lenovo\AppData\Local\Google\Chrome\User Data\Default\Bookmarks
 ```
 
 ![](https://gitee.com/zyplj/book-marks/raw/master/images/文件路径.png)
+
+# 更新日记
+
+## 2023/3/5
+
+新增书签筛选，一开始准备用vue前端filter去解决，但是分页只展示12个书签。所以还是用后端去解决了，新增Classid参数。修改了书签的排列顺序，最新添加的书签将放在最前面。
+
+优化了linq查询，将join联表换成了导航属性查询。
 
 # 遇到问题
 

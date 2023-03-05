@@ -33,5 +33,9 @@ namespace BrowerBookmariks.Model.ViewModel
         /// 排序字段
         /// </summary>
         public string? SortBy { get; set; }
+        /// <summary>
+        /// 分级筛选id
+        /// </summary>
+        public int? Classid { get; set; }
     }
 }

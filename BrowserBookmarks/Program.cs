@@ -2,6 +2,7 @@ using BrowerBookmariks.Model;
 using BrowerBookmariks.Model.Entitys;
 using BrowerBookmariks.Model.Services;
 using BrowerBookmariks.Services.BookTop;
+using BrowerBookmariks.Services.Classifications;
 using BrowserBookmarks.Filters;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Encodings.Web;
@@ -10,6 +11,11 @@ using System.Text.Unicode;
 var builder = WebApplication.CreateBuilder(args);
 
 
+//防止返回值叠加重复
+builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
+{
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+});
 //注册统一格式返回值过滤器
 var mvcBuilder = builder.Services.AddControllersWithViews(
     options => { options.Filters.Add<ResponseWrapperFilter>(); }
@@ -25,6 +31,7 @@ builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
 {
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 });
+builder.Services.AddControllersWithViews();
 //配置后端端口
 builder.WebHost.UseUrls("http://*:9031");
 //跨域
@@ -35,11 +42,13 @@ builder.Services.AddCors(options =>
         opt => opt.AllowAnyOrigin()
         .AllowAnyHeader()
         .AllowAnyMethod()
-        .WithExposedHeaders("http://localhost:9030/"));
+        //.WithExposedHeaders("http://101.43.25.210:9030/"));
+        .WithExposedHeaders("http://localhost:8080/"));
 });
 //服务层注入
 builder.Services.AddTransient<IBookmarks, Bookmarks>();
 builder.Services.AddTransient<IBookTopService, BookTopService>();
+builder.Services.AddTransient<IClassifications, Classifications>();
 
 
 // Add services to the container.
