@@ -165,8 +165,11 @@ C:\Users\Lenovo\AppData\Local\Google\Chrome\User Data\Default\Bookmarks
 ## 2023/3/5
 
 新增书签筛选，一开始准备用vue前端filter去解决，但是分页只展示12个书签。所以还是用后端去解决了，新增Classid参数。修改了书签的排列顺序，最新添加的书签将放在最前面。
-
 优化了linq查询，将join联表换成了导航属性查询。
+
+## 2023/3/14
+
+新增百度搜索，一开始用axios去请求接口，但是发现部署之后会出现跨域问题，然后百度了很久，采用了script的方式做请求，也不是很明白，不过能用。
 
 # 遇到问题
 
