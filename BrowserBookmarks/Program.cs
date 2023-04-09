@@ -13,20 +13,20 @@ using System.Text.Unicode;
 var builder = WebApplication.CreateBuilder(args);
 
 
-//·ÀÖ¹·µ»ØÖµµş¼ÓÖØ¸´
+//é˜²æ­¢è¿”å›å€¼å åŠ é‡å¤
 builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
 {
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 });
-//×¢²áÍ³Ò»¸ñÊ½·µ»ØÖµ¹ıÂËÆ÷
+//æ³¨å†Œç»Ÿä¸€æ ¼å¼è¿”å›å€¼è¿‡æ»¤å™¨
 var mvcBuilder = builder.Services.AddControllersWithViews(
     options => { options.Filters.Add<ResponseWrapperFilter>(); }
 );
-//Êı¾İ¿âÁ¬½Ó
+//æ•°æ®åº“è¿æ¥
 builder.Services.AddDbContext<MyDbContext>(opt =>
 {
     //string connStr = builder.Configuration.GetSection("ConnStr").Value;
-    string connStr = "Server=101.43.25.210;Port=3306;Database=BookMark; User=root;Password=zyplj1314999;";
+    string connStr = "";
     opt.UseMySql(connStr, new MySqlServerVersion(new Version(5, 7, 40)));
 });
 builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
@@ -34,10 +34,10 @@ builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 });
 builder.Services.AddControllersWithViews();
-//ÅäÖÃºó¶Ë¶Ë¿Ú
+//é…ç½®åç«¯ç«¯å£
 builder.WebHost.UseUrls("http://*:9031");
-//¿çÓò
-//Ìí¼Ó¿çÓò²ßÂÔ
+//è·¨åŸŸ
+//æ·»åŠ è·¨åŸŸç­–ç•¥
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy", 
@@ -46,7 +46,7 @@ builder.Services.AddCors(options =>
         .AllowAnyMethod()
         .WithExposedHeaders("http://localhost:9030/"));
 });
-//·şÎñ²ã×¢Èë
+//æœåŠ¡å±‚æ³¨å…¥
 builder.Services.AddTransient<IBookmarks, Bookmarks>();
 builder.Services.AddTransient<IBookTopService, BookTopService>();
 builder.Services.AddTransient<IClassifications, Classifications>();
@@ -69,7 +69,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-//¿ªÆô¿çÓò
+//å¼€å¯è·¨åŸŸ
 app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
