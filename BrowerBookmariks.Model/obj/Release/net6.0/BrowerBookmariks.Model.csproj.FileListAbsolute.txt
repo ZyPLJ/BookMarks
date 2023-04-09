@@ -1,0 +1,14 @@
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Model\bin\Release\net6.0\BrowerBookmariks.Model.deps.json
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Model\bin\Release\net6.0\BrowerBookmariks.Model.runtimeconfig.json
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Model\bin\Release\net6.0\BrowerBookmariks.Model.dll
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Model\bin\Release\net6.0\BrowerBookmariks.Model.pdb
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Model\obj\Release\net6.0\BrowerBookmariks.Model.csproj.AssemblyReference.cache
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Model\obj\Release\net6.0\BrowerBookmariks.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Model\obj\Release\net6.0\BrowerBookmariks.Model.AssemblyInfoInputs.cache
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Model\obj\Release\net6.0\BrowerBookmariks.Model.AssemblyInfo.cs
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Model\obj\Release\net6.0\BrowerBookmariks.Model.csproj.CoreCompileInputs.cache
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Model\obj\Release\net6.0\BrowerBookmariks.Model.dll
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Model\obj\Release\net6.0\refint\BrowerBookmariks.Model.dll
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Model\obj\Release\net6.0\BrowerBookmariks.Model.pdb
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Model\obj\Release\net6.0\BrowerBookmariks.Model.genruntimeconfig.cache
+D:\.net6\BrowserBookmarks\BrowerBookmariks.Model\obj\Release\net6.0\ref\BrowerBookmariks.Model.dll
