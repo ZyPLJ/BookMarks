@@ -25,9 +25,8 @@ var mvcBuilder = builder.Services.AddControllersWithViews(
 //数据库连接
 builder.Services.AddDbContext<MyDbContext>(opt =>
 {
-    //string connStr = builder.Configuration.GetSection("ConnStr").Value;
-    string connStr = "";
-    opt.UseMySql(connStr, new MySqlServerVersion(new Version(5, 7, 40)));
+    string connStr = "Data Source=app.db;Foreign Keys=False";
+    opt.UseSqlite(connStr);
 });
 builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
 {
@@ -35,7 +34,7 @@ builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
 });
 builder.Services.AddControllersWithViews();
 //配置后端端口
-builder.WebHost.UseUrls("http://*:9031");
+//builder.WebHost.UseUrls("http://*:9031");
 //跨域
 //添加跨域策略
 builder.Services.AddCors(options =>
