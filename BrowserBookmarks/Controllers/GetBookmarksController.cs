@@ -19,9 +19,28 @@ namespace BrowserBookmarks.Controllers
             _bookmarks = bookmarks;
         }
         [HttpPost]
-        public ApiResponse BookMarks(IFormFile file)
+        public async Task<ApiResponse> BookMarks(IFormFile file)
         {
-            return _bookmarks.bookmarks(file);
+            return await _bookmarks.bookmarks(file);
+        }
+
+        [HttpGet]
+        public async Task<ApiResponse> AnalysisBookmark(string type)
+        {
+            try
+            {
+                var result = await _bookmarks.AnalysisBookmark(type);
+                if (result)
+                {
+                    return new ApiResponse { Data = "解析成功！" };
+                }
+
+                return new ApiResponse { Data = "解析失败！" };
+            }
+            catch (Exception e)
+            {
+                return new ApiResponse { Data = e.Message };
+            }
         }
         [ResponseCache(Duration = 30)]
         [HttpGet]
