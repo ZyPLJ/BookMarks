@@ -24,7 +24,7 @@ namespace BrowserBookmarks.Controllers
             return await _bookmarks.bookmarks(file);
         }
 
-        [HttpGet]
+        [HttpGet("{type}")]
         public async Task<ApiResponse> AnalysisBookmark(string type)
         {
             try
@@ -32,14 +32,14 @@ namespace BrowserBookmarks.Controllers
                 var result = await _bookmarks.AnalysisBookmark(type);
                 if (result)
                 {
-                    return new ApiResponse { Data = "解析成功！" };
+                    return new ApiResponse { Message = "解析成功！" };
                 }
 
-                return new ApiResponse { Data = "解析失败！" };
+                return new ApiResponse { Message = "解析失败！" };
             }
             catch (Exception e)
             {
-                return new ApiResponse { Data = e.Message };
+                return new ApiResponse { Message = e.Message };
             }
         }
         [ResponseCache(Duration = 30)]
