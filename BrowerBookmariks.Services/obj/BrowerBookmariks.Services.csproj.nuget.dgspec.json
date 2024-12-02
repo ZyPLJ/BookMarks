@@ -1,32 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "D:\\.net6\\BrowserBookmarks\\BrowerBookmariks.Services\\BrowerBookmariks.Services.csproj": {}
+    "D:\\项目\\BookMarks\\BrowerBookmariks.Services\\BrowerBookmariks.Services.csproj": {}
   },
   "projects": {
-    "D:\\.net6\\BrowserBookmarks\\BrowerBookmariks.Model\\BrowerBookmariks.Model.csproj": {
+    "D:\\项目\\BookMarks\\BrowerBookmariks.Model\\BrowerBookmariks.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.net6\\BrowserBookmarks\\BrowerBookmariks.Model\\BrowerBookmariks.Model.csproj",
+        "projectUniqueName": "D:\\项目\\BookMarks\\BrowerBookmariks.Model\\BrowerBookmariks.Model.csproj",
         "projectName": "BrowerBookmariks.Model",
-        "projectPath": "D:\\.net6\\BrowserBookmarks\\BrowerBookmariks.Model\\BrowerBookmariks.Model.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\.net6\\BrowserBookmarks\\BrowerBookmariks.Model\\obj\\",
+        "projectPath": "D:\\项目\\BookMarks\\BrowerBookmariks.Model\\BrowerBookmariks.Model.csproj",
+        "packagesPath": "C:\\Users\\17679\\.nuget\\packages\\",
+        "outputPath": "D:\\项目\\BookMarks\\BrowerBookmariks.Model\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\17679\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net9.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {}
           }
         },
@@ -34,11 +35,16 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
             "Microsoft.AspNetCore.Http.Abstractions": {
               "target": "Package",
@@ -48,15 +54,19 @@
               "target": "Package",
               "version": "[2.2.5, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.2, )"
-            },
-            "Pomelo.EntityFrameworkCore.MySql": {
-              "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[9.0.0, )"
             },
             "X.PagedList": {
               "target": "Package",
@@ -79,36 +89,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\17679\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\.net6\\BrowserBookmarks\\BrowerBookmariks.Services\\BrowerBookmariks.Services.csproj": {
+    "D:\\项目\\BookMarks\\BrowerBookmariks.Services\\BrowerBookmariks.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.net6\\BrowserBookmarks\\BrowerBookmariks.Services\\BrowerBookmariks.Services.csproj",
+        "projectUniqueName": "D:\\项目\\BookMarks\\BrowerBookmariks.Services\\BrowerBookmariks.Services.csproj",
         "projectName": "BrowerBookmariks.Services",
-        "projectPath": "D:\\.net6\\BrowserBookmarks\\BrowerBookmariks.Services\\BrowerBookmariks.Services.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\.net6\\BrowserBookmarks\\BrowerBookmariks.Services\\obj\\",
+        "projectPath": "D:\\项目\\BookMarks\\BrowerBookmariks.Services\\BrowerBookmariks.Services.csproj",
+        "packagesPath": "C:\\Users\\17679\\.nuget\\packages\\",
+        "outputPath": "D:\\项目\\BookMarks\\BrowerBookmariks.Services\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\17679\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net9.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\.net6\\BrowserBookmarks\\BrowerBookmariks.Model\\BrowerBookmariks.Model.csproj": {
-                "projectPath": "D:\\.net6\\BrowserBookmarks\\BrowerBookmariks.Model\\BrowerBookmariks.Model.csproj"
+              "D:\\项目\\BookMarks\\BrowerBookmariks.Model\\BrowerBookmariks.Model.csproj": {
+                "projectPath": "D:\\项目\\BookMarks\\BrowerBookmariks.Model\\BrowerBookmariks.Model.csproj"
               }
             }
           }
@@ -117,19 +128,28 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
               "version": "[2.2.5, )"
             },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
-              "version": "[4.8.5, )"
+              "version": "[4.9.0, )"
             }
           },
           "imports": [
@@ -148,7 +168,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\17679\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
