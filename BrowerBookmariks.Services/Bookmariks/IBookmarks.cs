@@ -18,7 +18,7 @@ namespace BrowerBookmariks.Model.Services
         /// </summary>
         /// <param name="path">Bookmarks文件路径</param>
         /// <returns></returns>
-        ApiResponse bookmarks(IFormFile file);
+        Task<ApiResponse> bookmarks(IFormFile file);
         List<NewBookmark> GetAll();
         /// <summary>
         /// 分页查询
@@ -31,5 +31,6 @@ namespace BrowerBookmariks.Model.Services
         /// </summary>
         /// <returns></returns>
         Task<int> GetCountAsync();
+        Task<bool> AnalysisBookmark(string type);
     }
 }
